@@ -91,6 +91,7 @@ class GameFragment : Fragment() {
                 }
             }
         }
+        setHasOptionsMenu(true)
         return binding.root
     }
 
