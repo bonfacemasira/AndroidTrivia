@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.androidtrivia.databinding.FragmentGameOverBinding
 
 class GameOverFragment : Fragment() {
@@ -17,5 +18,9 @@ class GameOverFragment : Fragment() {
         val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_game_over, container, false
         )
-        return binding.root    }
+        binding.tryAgainButton.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_gameOverFragment2_to_gameFragment)
+        }
+        return binding.root
+    }
 }
